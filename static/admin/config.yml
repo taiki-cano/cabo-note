@@ -1,5 +1,5 @@
 backend:
-  name: taiki-cano
+  name: github
   repo: taiki-cano/cabo-note
 
 media_folder: content/assets
