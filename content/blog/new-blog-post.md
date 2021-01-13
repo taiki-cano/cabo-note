@@ -5,14 +5,11 @@ title: New Blog Post
 description: new blog post
 ---
 test
-
 てすと
-
 テスト
 
 
-
-```
+```js
 function(){
 
 }
