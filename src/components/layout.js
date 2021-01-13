@@ -2,57 +2,44 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    const blogPath = `${__PATH_PREFIX__}/blog/`
-    let header
+    const { title, children } = this.props
+    // const rootPath = `${__PATH_PREFIX__}/`
+    const ColoredLine = ({ color }) => (
+      <hr
+        style = {{
+          color: color,
+          backgroundColor: color,
+          height: 3
+        }}
+      />
+    );
 
-    if (location.pathname === rootPath || location.pathname === blogPath) {
-      header = (
-        <h1
+    let header
+    header = (
+      <h3
+        style={{
+          fontFamily: `Montserrat, sans-serif`,
+          marginTop: 0,
+          marginBottom: `0.5rem`,
+          fontSize: '2.5rem',
+        }}
+      >
+        <Link
           style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
+            boxShadow: `none`,
+            textDecoration: `none`,
+            color: `inherit`,
           }}
+          to={`/`}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={location.pathname === blogPath ? `/blog/` : `/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/blog/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
+          {title}
+        </Link>
+      </h3>
+    )
     return (
       <Wrapper>
         <div
@@ -64,10 +51,11 @@ class Layout extends React.Component {
           }}
         >
           <header>{header}</header>
+          <ColoredLine color="#8fbd89" />
           <main>{children}</main>
         </div>
         <Footer>
-          © {new Date().getFullYear()} {` `} cabo-note
+          © 2021 - {new Date().getFullYear()},{`　`}cabochapp-note
         </Footer>
       </Wrapper>
     )

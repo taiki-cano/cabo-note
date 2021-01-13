@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
     // edit below
-    title: `cabo-note`,
-    author: `taiki`,
+    title: `cabochapp-note`,
+    author: `cabochapp`,
     description: `備忘録`,
-    siteUrl: `https://cabo-note.netlify.app`,
+    siteUrl: `https://cabochapp-note.netlify.app`,
     social: {
       github: 'taiki-cano',
     },
@@ -37,7 +37,7 @@ module.exports = {
                 frontmatter {
                   title
                   description
-                  date(formatString: "MMMM DD, YYYY")
+                  date(formatString: "MM/DD, YYYY")
                 }
               }
             }
