@@ -55,7 +55,7 @@ class Layout extends React.Component {
           <main>{children}</main>
         </div>
         <Footer>
-          © 2021 - {new Date().getFullYear()},{`　`}cabochapp-note
+            © 2021{new Date().getFullYear() > 2021 && (<span> - {new Date().getFullYear()}</span>)},{`　`}{title}
         </Footer>
       </Wrapper>
     )
