@@ -1,14 +1,15 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
+import "./layout.css"
 
 import { rhythm } from "../utils/typography"
 import { siteMetadata } from "../../gatsby-config"
 
 class Layout extends React.Component {
   render() {
-    const { title, social, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
+    const { title, children } = this.props
+    // const rootPath = `${__PATH_PREFIX__}/`
     const ColoredLine = ({ color }) => (<hr style = {{ color: color, backgroundColor: color, height: 3 }} /> );
 
     let header
@@ -30,15 +31,24 @@ class Layout extends React.Component {
           }}
         >
           <header>{header}</header>
-          <ul>
-            <ui><Link to={siteMetadata.social.github.url + siteMetadata.social.github.name}>github</Link></ui>
-            <ui><Link to={siteMetadata.social.twitter.url + siteMetadata.social.twitter.name}>twitter</Link></ui>
-          </ul>
           <ColoredLine color="#8fbd89" />
           <main>{children}</main>
         </div>
         <Footer>
             © 2021{new Date().getFullYear() > 2021 && (<span> - {new Date().getFullYear()}</span>)},{`　`}{title}
+            <div className='menu_div'>
+                <ul id="nav">
+                    <ui><Link 
+                        style={{ 
+                            boxShadow: `none`, textDecoration: `none`, color: `inherit`, 
+                            marginRight: `2em`,
+                        }} 
+                        to={siteMetadata.social.github.url + siteMetadata.social.github.name}>github</Link></ui>
+                    <ui><Link 
+                        style={{ boxShadow: `none`, textDecoration: `none`, color: `inherit`, marginRight: `2em`}} 
+                        to={siteMetadata.social.twitter.url + siteMetadata.social.twitter.name}>twitter</Link></ui>
+                </ul>
+            </div>
         </Footer>
       </Wrapper>
     )

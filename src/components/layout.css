@@ -1,0 +1,15 @@
+#nav {
+    list-style: none;
+    overflow: hidden;
+    /* background-color: rgb(201, 230, 231); */
+}
+
+
+.menu_div {
+    text-align: right;
+    vertical-align: bottom;
+}
+
+.menu_bar {
+    text-decoration: none;
+}
