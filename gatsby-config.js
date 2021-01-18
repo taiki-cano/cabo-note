@@ -2,11 +2,18 @@ module.exports = {
   siteMetadata: {
     // edit below
     title: `kabochappi-note`,
-    author: `cabochapp`,
+    author: `kabochappi`,
     description: `備忘録`,
     siteUrl: `https://kabochappi-note.netlify.app`,
     social: {
-      github: 'taiki-cano',
+        github: {
+            name: `taiki-cano`,
+            url: `https://github.com/`,
+        },
+        twitter: {
+            name: `tabolu`,
+            url: `https://twitter.com/`,
+        },
     },
   },
   plugins: [
