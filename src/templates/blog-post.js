@@ -25,13 +25,8 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         <MDXRenderer>{post.body}</MDXRenderer>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <ul
-          style={{
+        <hr style={{ marginBottom: rhythm(1), }} />
+        <ul style={{
             display: `flex`,
             flexWrap: `wrap`,
             justifyContent: `space-between`,
@@ -41,25 +36,15 @@ class BlogPostTemplate extends React.Component {
         >
           <li>
             {previous && (
-              <Link style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `green`,
-              }}
-              to={`/blog${previous.fields.slug}`} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link style={{ boxShadow: `none`, textDecoration: `none`, color: `green`, fontSize: `0.8em` }}
+                    to={`/blog${previous.fields.slug}`} rel="prev"> ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `green`,
-              }}
-              to={`/blog${next.fields.slug}`} rel="next">
-                {next.frontmatter.title} →
+              <Link style={{ boxShadow: `none`, textDecoration: `none`, color: `green`, fontSize: `0.8em` }}
+                    to={`/blog${next.fields.slug}`} rel="next"> {next.frontmatter.title} →
               </Link>
             )}
           </li>

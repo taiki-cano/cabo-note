@@ -35,12 +35,9 @@ class Layout extends React.Component {
           <main>{children}</main>
         </div>
         <Footer>
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            maxWidth: rhythm(24),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        <div style={{
+            marginLeft: `auto`, marginRight: `auto`,
+            maxWidth: rhythm(24), padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           }}
         >
         <hr style={{color: "#8fbd89", backgroundColor: "#8fbd89", height: 2}} />
@@ -56,7 +53,7 @@ class Layout extends React.Component {
             </div>
             © 2021{new Date().getFullYear() > 2021 && (<span> - {new Date().getFullYear()}</span>)},
             {`　`}
-            <Link style={{ boxShadow: `none`, textDecoration: `none`, color: `inherit`, marginRight: `2em`,}}
+            <Link style={{ boxShadow: `none`, textDecoration: `none`, color: `inherit`, marginRight: `2em`}}
              to='/'>{title}</Link>
         </div>
         </Footer>
@@ -71,7 +68,7 @@ const Wrapper = styled.div`
 
 const Footer = styled.footer`
   text-align: center;
-  margin: 24px;
+  margin: 0;
 `
 
 export default Layout
