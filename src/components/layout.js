@@ -35,20 +35,30 @@ class Layout extends React.Component {
           <main>{children}</main>
         </div>
         <Footer>
-            © 2021{new Date().getFullYear() > 2021 && (<span> - {new Date().getFullYear()}</span>)},{`　`}{title}
-            <div className='menu_div'>
+        <div
+          style={{
+            marginLeft: `auto`,
+            marginRight: `auto`,
+            maxWidth: rhythm(24),
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          }}
+        >
+        <hr style={{color: "#8fbd89", backgroundColor: "#8fbd89", height: 2}} />
+        <div className='menu_div'>
                 <ul id="nav">
                     <ui><Link 
-                        style={{ 
-                            boxShadow: `none`, textDecoration: `none`, color: `inherit`, 
-                            marginRight: `2em`,
-                        }} 
+                        style={{ boxShadow: `none`, textDecoration: `none`, color: `inherit`, marginRight: `2em`, fontSize: `0.8em`,}} 
                         to={siteMetadata.social.github.url + siteMetadata.social.github.name}>github</Link></ui>
                     <ui><Link 
-                        style={{ boxShadow: `none`, textDecoration: `none`, color: `inherit`, marginRight: `2em`}} 
+                        style={{ boxShadow: `none`, textDecoration: `none`, color: `inherit`, marginRight: `2em`, fontSize: `0.8em`,}} 
                         to={siteMetadata.social.twitter.url + siteMetadata.social.twitter.name}>twitter</Link></ui>
                 </ul>
             </div>
+            © 2021{new Date().getFullYear() > 2021 && (<span> - {new Date().getFullYear()}</span>)},
+            {`　`}
+            <Link style={{ boxShadow: `none`, textDecoration: `none`, color: `inherit`, marginRight: `2em`,}}
+             to='/'>{title}</Link>
+        </div>
         </Footer>
       </Wrapper>
     )
