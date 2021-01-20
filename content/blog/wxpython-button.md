@@ -16,6 +16,7 @@ def createControls(self):
         name='btn_1'
     )
     self.btn_2 = wx.Button(self, -1, 'button_2', name='btn_2')
+    self.btn_3 = wx.Button(self, -1, "ON", name='btn3')
     
 ```
 
