@@ -45,8 +45,8 @@ def show_param(self, event):
 
 def rewrite_btn_label(self, event):
     evtObj = event.GetEventObject()
-    is_label = 'OFF' if evtObj.GetLabel() == 'ON' else 'ON'
-    evtObj.SetLabel(is_label)
+    evtObj.SetLabel('OFF' if evtObj.GetLabel() == 'ON' else 'ON')
+
 ```
 
 ```python
