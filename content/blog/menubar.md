@@ -1,7 +1,7 @@
 ---
 path: wxpython
 date: 2021-01-21T08:21:03.829Z
-title: MenuBar
+title: wxpython menubar
 description: setup the menubar of wxpython
 ---
 ```python
