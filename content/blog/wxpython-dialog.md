@@ -1,7 +1,7 @@
 ---
 path: wxpython
 date: 2021-01-23T06:32:27.820Z
-title: wxpython dialog
+title: wxpython dialog (modeless)
 description: about dialog og wxpython
 ---
 ```python
