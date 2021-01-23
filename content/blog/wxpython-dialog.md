@@ -35,12 +35,9 @@ class FrameWithForms(wx.Frame):
     def click_wclose(self, event):
         object = event.GetEventObject()
         object.Destroy()
-
 ```
 
-
-
-```
+```python
 class MyDialog(wx.Dialog):
     def __init__(self, parent, id, title, *args, **kwargs):
         wx.Dialog.__init__(self, parent, id, title)
