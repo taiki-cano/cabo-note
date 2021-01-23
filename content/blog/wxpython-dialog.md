@@ -29,17 +29,16 @@ class FrameWithForms(wx.Frame):
     def ShowDialog(self, event):
         dia = MyDialog(None, id=wx.ID_ANY, title="DialogSample")
         dia.Show(True)
-        # dia.Bind(wx.EVT_CLOSE, dia.click_wclose)
 
 ```
-
-
 
 ```python
 class MyDialog(wx.Dialog):
     def __init__(self, parent, id, title, *args, **kwargs):
         wx.Dialog.__init__(self, parent, id, title)
-        self.SetBackgroundColour(self.random_color())
+        bgcolor = self.random_color()
+        self.SetBackgroundColour(bgcolor)
+        self.SetTitle(f"DialogSample [color: {bgcolor} ]")
         self.Bind(wx.EVT_CLOSE, self.click_wclose)
 
     def random_color(self):
@@ -52,5 +51,4 @@ class MyDialog(wx.Dialog):
     def click_wclose(self, event):
         object = event.GetEventObject()
         object.Destroy()
-
 ```
