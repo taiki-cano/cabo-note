@@ -29,17 +29,20 @@ class FrameWithForms(wx.Frame):
     def ShowDialog(self, event):
         dia = MyDialog(None, id=wx.ID_ANY, title="DialogSample")
         dia.SetBackgroundColour('dark green')
-        dia.Bind(wx.EVT_CLOSE, self.click_wclose)
+        dia.Bind(wx.EVT_CLOSE, dia.click_wclose)
         dia.Show()
 
-    def click_wclose(self, event):
-        object = event.GetEventObject()
-        object.Destroy()
 ```
+
+
 
 ```python
 class MyDialog(wx.Dialog):
     def __init__(self, parent, id, title, *args, **kwargs):
         wx.Dialog.__init__(self, parent, id, title)
-        
+
+    def click_wclose(self, event):
+        object = event.GetEventObject()
+        object.Destroy()
+
 ```
