@@ -28,9 +28,8 @@ class FrameWithForms(wx.Frame):
 
     def ShowDialog(self, event):
         dia = MyDialog(None, id=wx.ID_ANY, title="DialogSample")
-        dia.SetBackgroundColour('dark green')
-        dia.Bind(wx.EVT_CLOSE, dia.click_wclose)
-        dia.Show()
+        dia.Show(True)
+        # dia.Bind(wx.EVT_CLOSE, dia.click_wclose)
 
 ```
 
@@ -40,6 +39,15 @@ class FrameWithForms(wx.Frame):
 class MyDialog(wx.Dialog):
     def __init__(self, parent, id, title, *args, **kwargs):
         wx.Dialog.__init__(self, parent, id, title)
+        self.SetBackgroundColour(self.random_color())
+        self.Bind(wx.EVT_CLOSE, self.click_wclose)
+
+    def random_color(self):
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = (r, g, b)
+        return color
 
     def click_wclose(self, event):
         object = event.GetEventObject()
